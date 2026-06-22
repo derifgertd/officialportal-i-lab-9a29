@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引 · 竞技宝</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8f5ef;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      color: #2d2a24;
+      line-height: 1.75;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #d9d3c8;
+      padding-bottom: 1.6rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #2b241c;
+      margin-bottom: 0.4rem;
+    }
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #7b7265;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .section {
+      margin-bottom: 2.6rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #3d352b;
+      border-left: 4px solid #b8a694;
+      padding-left: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    .highlight-box {
+      background: #ede8df;
+      border-radius: 6px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.6rem 0;
+      border-left: 5px solid #9f917d;
+      font-size: 0.95rem;
+    }
+    .highlight-box strong {
+      color: #3a2f22;
+    }
+    .inline-link {
+      color: #4d3e2d;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #b8a694;
+      transition: background 0.2s;
+      padding: 0 2px;
+    }
+    .inline-link:hover {
+      background: #e2d9cc;
+      text-decoration: none;
+    }
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.5rem 0 1rem;
+    }
+    .feature-item {
+      flex: 1 1 200px;
+      background: #f2ede5;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .feature-item .num {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #7a6b58;
+      letter-spacing: 0.03em;
+    }
+    .feature-item p {
+      margin: 0.4rem 0 0;
+      font-size: 0.92rem;
+    }
+    .quote-block {
+      background: #fffaf3;
+      padding: 1.2rem 1.6rem;
+      border-radius: 8px;
+      border: 1px solid #d6cdbf;
+      margin: 1.8rem 0;
+    }
+    .quote-block .author {
+      margin-top: 0.6rem;
+      text-align: right;
+      font-size: 0.85rem;
+      color: #766b5d;
+    }
+    .faq-list {
+      list-style: none;
+      margin-top: 1.2rem;
+    }
+    .faq-list li {
+      border-bottom: 1px dashed #d2c9bc;
+      padding: 0.7rem 0;
+    }
+    .faq-list li:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #3d352b;
+    }
+    .faq-a {
+      margin-top: 0.2rem;
+      font-size: 0.92rem;
+      color: #4f473c;
+    }
+    .footnote {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dad2c5;
+      font-size: 0.85rem;
+      color: #7b7265;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      body { padding: 1.2rem 0.9rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .feature-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>资料整理·竞技宝</h1>
+      <div class="sub">一份基于信息索引的产品说明</div>
+    </div>
+
+    <div class="section">
+      <h2>摘要</h2>
+      <p>在信息碎片化的环境下，许多用户倾向于先梳理产品的基本轮廓再做判断。<strong>竞技宝</strong>作为一家线上服务平台，围绕赛事数据、信息聚合与用户互动，逐渐形成了一套较为完整的工具链。本文从资料整理的角度，记录其核心功能、使用场景与注意事项，供有需要的读者参考。</p>
+      <p>你可以在<a class="inline-link" href="https://app-jjb.com">竞技宝</a>页面中找到更多原始资料。以下内容仅作个人梳理，不构成任何形式的使用指导或推荐。</p>
+    </div>
+
+    <div class="section">
+      <h2>亮点速览</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="num">01 · 信息聚合</div>
+          <p>将分散的赛事动态、数据统计整合在同一界面中，减少用户在不同页面间的切换成本。</p>
+        </div>
+        <div class="feature-item">
+          <div class="num">02 · 交互逻辑</div>
+          <p>采用卡片式布局和渐进式加载，使浏览过程更接近阅读而非搜索，降低认知负担。</p>
+        </div>
+        <div class="feature-item">
+          <div class="num">03 · 持续更新</div>
+          <p>内容源保持一定刷新频率，信息新鲜度在同类平台中处于中等偏上水平。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>使用建议</h2>
+      <p>如果你初次接触这类平台，不妨从以下角度切入：</p>
+      <ul style="padding-left: 1.6rem; margin-bottom: 0.8rem;">
+        <li>先浏览首页的信息分类，了解数据模块的大致分布；</li>
+        <li>关注自己感兴趣的领域，观察信息更新的节奏与覆盖范围；</li>
+        <li>对于任何数据或赛事结果，建议通过多个渠道交叉核实。</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>一个提醒：</strong> 任何在线平台的信息都存在延迟或误差的可能。将 <a class="inline-link" href="https://app-jjb.com">竞技宝</a> 视为资料索引工具是合理的定位，但不宜将其作为唯一判断依据。
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>场景举例</h2>
+      <p>整理信息的工作者有时需要一种轻量级的数据锚点。例如在撰写赛事回顾时，先通过<strong>竞技宝</strong>快速确认关键时间节点和比分，再前往官方记录核对细节。这种“索引‑验证”的工作流，能够兼顾效率与可靠性。</p>
+      <p>另一些用户则利用平台的信息流来培养自己的判断习惯——不急于采纳某个观点，而是通过长期浏览建立对数据波动的直觉。这种非功利的使用方式，往往能带来更从容的体验。</p>
+    </div>
+
+    <div class="section">
+      <h2>FAQ 摘要</h2>
+      <ul class="faq-list">
+        <li>
+          <div class="faq-q">该平台是否需要注册才能浏览全部内容？</div>
+          <div class="faq-a">部分基础信息可直接查看，但某些细化功能可能需要登录账户。具体以实际页面显示为准。</div>
+        </li>
+        <li>
+          <div class="faq-q">信息更新是否有固定的时间点？</div>
+          <div class="faq-a">暂未发现明确的更新排期表。一般来说，主流赛事期间内容更新频率会明显提高。</div>
+        </li>
+        <li>
+          <div class="faq-q">可以将其作为数据引用的可靠来源吗？</div>
+          <div class="faq-a">建议仅作为参考线索，正式引用请以官方或权威机构发布的数据为准。</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="quote-block">
+      <p>“整理资料的人，不是要替别人做决定，而是把散落的拼图摆在一起，让每个人看清自己的那一条线。”</p>
+      <div class="author">—— 引自某信息管理札记</div>
+    </div>
+
+    <div class="footnote">
+      本页内容仅为产品索引摘要，不构成任何形式的使用指引。<br>
+      如需查阅原始平台，请访问 <a class="inline-link" href="https://app-jjb.com">竞技宝</a> · 资料整理于日常积累
+    </div>
+  </div>
+</body>
+</html>
