@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 – 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f8f9;
+            color: #1d2b2f;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 主容器网格卡片风格 */
+        .grid-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 8px 24px rgba(0, 60, 60, 0.06);
+            border: 1px solid #d4e8ea;
+            transition: box-shadow 0.2s;
+        }
+
+        .grid-card:hover {
+            box-shadow: 0 12px 32px rgba(21, 94, 94, 0.08);
+        }
+
+        /* 蓝绿色点缀 */
+        .accent {
+            color: #1f7a7a;
+        }
+
+        .accent-light {
+            color: #3fa7a7;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #d7efef;
+            color: #0b4f4f;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #b6d9d9;
+        }
+
+        /* hero 区域 */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            gap: 1.5rem;
+        }
+
+        .hero-text {
+            flex: 2 1 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: #0b3c3c;
+            line-height: 1.2;
+        }
+
+        .hero-text .sub {
+            font-size: 1.1rem;
+            color: #2c5e5e;
+            border-left: 4px solid #3fa7a7;
+            padding-left: 1rem;
+            margin: 0.8rem 0 1rem 0;
+        }
+
+        .hero-visual {
+            flex: 1 1 150px;
+            background: #e1f2f2;
+            border-radius: 60px;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #1a6b6b;
+            border: 1px solid #bbdbdb;
+            backdrop-filter: blur(2px);
+            box-shadow: inset 0 1px 6px rgba(40, 110, 110, 0.1);
+        }
+
+        .hero-visual span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        /* 摘要 */
+        .summary {
+            margin-bottom: 2rem;
+            padding: 1.4rem 1.8rem;
+        }
+
+        .summary p {
+            font-size: 1rem;
+            color: #1e3a3a;
+        }
+
+        /* 亮点网格 */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 2.5rem 0;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem 1rem 1.2rem 1rem;
+            border: 1px solid #d0e6e6;
+            box-shadow: 0 2px 8px rgba(0, 70, 70, 0.04);
+            transition: transform 0.15s, border-color 0.15s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-3px);
+            border-color: #8cc9c9;
+        }
+
+        .highlight-card .icon {
+            display: inline-block;
+            background: #ddf0f0;
+            border-radius: 60px;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            color: #136161;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #0d4a4a;
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: #2f5b5b;
+        }
+
+        /* 使用建议 + 场景 */
+        .advice-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .advice-card {
+            flex: 1 1 200px;
+            background: #f6fcfc;
+            border-radius: 24px;
+            padding: 1.6rem 1.2rem;
+            border: 1px solid #cbe2e2;
+        }
+
+        .advice-card .title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #0f5959;
+            border-bottom: 2px solid #b1d6d6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .advice-card ul {
+            list-style: none;
+        }
+
+        .advice-card li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #1e4747;
+        }
+
+        .advice-card li::before {
+            content: "•";
+            color: #2e9c9c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 提示与FAQ摘要 */
+        .faq-tip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 1.8rem 0;
+            background: #ecf6f6;
+            border-radius: 28px;
+            padding: 1.6rem 1.8rem;
+            border: 1px solid #c7dfdf;
+        }
+
+        .faq-item {
+            flex: 1 1 150px;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #0a4d4d;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #2b5858;
+        }
+
+        .tiny-badge {
+            background: #c0e0e0;
+            color: #094747;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            margin-left: 0.4rem;
+        }
+
+        /* 可信但克制的说明 */
+        .trust-note {
+            border-top: 1px solid #cde1e1;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+        }
+
+        .trust-note p {
+            font-size: 0.88rem;
+            color: #376161;
+            max-width: 600px;
+        }
+
+        .trust-note a {
+            color: #1f7a7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #8ec5c5;
+            transition: border-bottom 0.15s;
+        }
+
+        .trust-note a:hover {
+            border-bottom: 1px solid #136161;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #467777;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-visual {
+                font-size: 1.4rem;
+                padding: 1rem 0.5rem;
+            }
+
+            .grid-card {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .advice-section {
+                flex-direction: column;
+            }
+
+            .faq-tip {
+                flex-direction: column;
+                padding: 1.2rem 1rem;
+            }
+
+            .trust-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero -->
+        <div class="hero">
+            <div class="hero-text">
+                <span class="badge">产品说明 · 聚焦日常</span>
+                <h1>竞技宝 · 轻量体验</h1>
+                <div class="sub">把功能交给设计，把选择留给你</div>
+                <p style="color: #2b5656; max-width: 460px; font-size: 0.95rem;">
+                    围绕信息获取与内容互动，<a href="https://home-jjb.com" style="color: #1f7a7a; font-weight: 500; text-decoration: none;">竞技宝</a>提供了一套简洁而克制的工具逻辑，不打扰、不浮夸，只聚焦你真正需要的环节。
+                </p>
+            </div>
+            <div class="hero-visual">
+                ⚡<span>清晰 · 直接</span>
+            </div>
+        </div>
+
+        <!-- 摘要卡片 -->
+        <div class="grid-card summary">
+            <p>
+                <span style="background: #d5eeee; padding: 0.1rem 0.6rem; border-radius: 20px; font-weight: 500;">摘要</span>
+                &ensp;平台围绕内容发现与基础交互构建，没有冗余的层级，页面信息结构直观。无论你是在寻找某一类主题的聚合，还是希望快速浏览更新，<strong style="color: #105c5c;">竞技宝</strong>都尽量保持低门槛和一致性。每个模块独立且轻量，适合日常使用，也适合需要安静浏览的场景。
+            </p>
+        </div>
+
+        <!-- 亮点网格 -->
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="icon">🎯</div>
+                <h3>主题聚合</h3>
+                <p>内容按场景分类，减少无关干扰，直达你感兴趣的区域。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🔄</div>
+                <h3>操作反馈</h3>
+                <p>点击、切换、展开都保持即时响应，不拖沓，不闪烁。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">📱</div>
+                <h3>移动适配</h3>
+                <p>从手机到大屏，布局自动调整，阅读和点选都自然顺手。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🧘</div>
+                <h3>视觉降噪</h3>
+                <p>蓝绿色调与大面积留白，让界面呼吸，长时间使用也不疲劳。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 + 场景 -->
+        <div class="advice-section">
+            <div class="advice-card">
+                <div class="title">📌 使用建议</div>
+                <ul>
+                    <li>从首页概览切入，快速了解当前热门主题。</li>
+                    <li>利用分类筛选缩小范围，精准定位内容。</li>
+                    <li>保持浏览器默认字体大小，获得最佳版式效果。</li>
+                    <li>可尝试深色模式（若设备支持），进一步降低视觉负担。</li>
+                </ul>
+            </div>
+            <div class="advice-card">
+                <div class="title">📖 典型场景</div>
+                <ul>
+                    <li>早晨通勤时浏览最新摘要。</li>
+                    <li>午休间隙探索不同兴趣标签。</li>
+                    <li>晚间整理思路，翻阅收藏内容。</li>
+                    <li>与朋友分享某个具体主题页面。</li>
+                </ul>
+            </div>
+            <div class="advice-card">
+                <div class="title">⚙️ 后台逻辑</div>
+                <ul>
+                    <li>无自动刷新干扰，由你主动触发更新。</li>
+                    <li>数据加载分段完成，首次访问轻量快速。</li>
+                    <li>不追踪个人行为，只保留必要会话状态。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ摘要 + 提示 -->
+        <div class="faq-tip">
+            <div class="faq-item">
+                <div class="q">❓ 是否需要注册？</div>
+                <div class="a">大部分内容可直接浏览，部分互动功能可选基础身份验证，非强制。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">❓ 内容更新频率？</div>
+                <div class="a">由运营团队人工筛选与编排，保持信息质量，不追求数量。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">❓ 移动端体验如何？</div>
+                <div class="a">完全适配，所有卡片和按钮均针对触控优化，无需缩放。</div>
+            </div>
+            <div style="flex: 0.5; min-width: 120px; background: #d7eeee; border-radius: 40px; padding: 0.6rem 1rem; align-self: center; text-align: center; font-size: 0.85rem; color: #065252;">
+                ⚡ 提示：所有链接均指向同一来源，无跳转陷阱。
+            </div>
+        </div>
+
+        <!-- 可信但克制的说明 -->
+        <div class="trust-note grid-card">
+            <p>
+                <span style="font-weight: 600;">关于 <a href="https://home-jjb.com" style="color: #1a6b6b; text-decoration: none;">竞技宝</a></span>
+                &nbsp;·&nbsp; 平台仅提供信息展示与基础交互，不涉及任何金融、投资或敏感操作。所有内容均来自公开可查来源或用户自愿提交，不包含诱导性表述。如果你对某个模块有疑问，建议先浏览常见问题区域，或通过页面底部信息自行判断。我们始终相信，好的工具应该安静地待在一边，等你需要时再伸手。
+            </p>
+            <p style="font-size: 0.8rem; color: #427373;">
+                <span class="tiny-badge">V</span> 版本迭代以稳定为主，功能增减均会提前说明。
+            </p>
+        </div>
+
+        <div class="footer-note">
+            <span>© 竞技宝 · 产品说明页 · 信息仅供参考</span>
+        </div>
+    </div>
+</body>
+</html>
